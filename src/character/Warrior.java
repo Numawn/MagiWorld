@@ -4,14 +4,15 @@ import stat.Stats;
 
 public class Warrior extends Player {
 
-	public Warrior(Stats statistics) {
-		super(statistics);
+	public Warrior(String name, Stats statistics) {
+		super(name, statistics);
 	}
 	
 
 	@Override
 	public void getDescription() {
 		// TODO Auto-generated method stub	
+		// blabla + super.getDescription() + blablabla
 	}
 
 	@Override

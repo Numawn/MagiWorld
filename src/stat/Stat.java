@@ -22,7 +22,7 @@ public class Stat {
 	}
 	
 	public int getValue() {
-		return 0;
+		return -1;
 	}
 	
 	public void setValue(int newValue) {

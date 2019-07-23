@@ -28,7 +28,7 @@ public class Stats {
 		
 	}
 	
-	public void displayStats() {
+	public void display() {
 		
 	}
 	

@@ -6,8 +6,8 @@ public class Rover extends Player {
 
 	
 	
-	public Rover(Stats statistics) {
-		super(statistics);
+	public Rover(String name, Stats statistics) {
+		super(name, statistics);
 	}
 	
 

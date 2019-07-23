@@ -4,9 +4,10 @@ import stat.Stats;
 
 public abstract class Player implements Character {
 	
+	private String name; //(Joueur 1 / Joueur 2)
 	private Stats stats;
 	
-	public Player(Stats statistics) {
+	public Player(String name, Stats statistics) {
 		
 	}
 	
@@ -23,7 +24,9 @@ public abstract class Player implements Character {
 	}
 
 	@Override
-	public abstract void getDescription();
+	public void getDescription() {
+		System.out.println(this.name);
+	}
 
 	@Override
 	public abstract void basicAttack(Character opponent);

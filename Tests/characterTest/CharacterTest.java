@@ -13,9 +13,9 @@ import stat.Stats;
 
 class CharacterTest {
 	
-	private Player warrior = new Warrior(new Stats(new Stat("Niveau",10),new Stat("PV",50), new Stat("Attack",10), new Stat("Intelligence",0), new Stat("Agilité",0)));
-	private Player mage = new Mage(new Stats(new Stat("Niveau",10),new Stat("PV",50), new Stat("Attack",0), new Stat("Intelligence",10), new Stat("Agilité",0)));
-	private Player rover = new Rover(new Stats(new Stat("Niveau",10),new Stat("PV",50), new Stat("Attack",0), new Stat("Intelligence",0), new Stat("Agilité",10)));
+	private Player warrior = new Warrior("Warrior",new Stats(new Stat("Niveau",10),new Stat("PV",50), new Stat("Attack",10), new Stat("Intelligence",0), new Stat("Agilité",0)));
+	private Player mage = new Mage("Mage", new Stats(new Stat("Niveau",10),new Stat("PV",50), new Stat("Attack",0), new Stat("Intelligence",10), new Stat("Agilité",0)));
+	private Player rover = new Rover("Rover", new Stats(new Stat("Niveau",10),new Stat("PV",50), new Stat("Attack",0), new Stat("Intelligence",0), new Stat("Agilité",10)));
 	
 	
 	@Test

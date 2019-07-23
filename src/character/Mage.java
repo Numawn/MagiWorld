@@ -5,8 +5,8 @@ import stat.Stats;
 public class Mage extends Player {
 	
 	
-	public Mage(Stats statistics) {
-		super(statistics);
+	public Mage(String name, Stats statistics) {
+		super(name, statistics);
 	}
 	
 
