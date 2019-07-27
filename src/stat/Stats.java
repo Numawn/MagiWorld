@@ -72,7 +72,7 @@ public class Stats {
 	
 	public void display() {
 		System.out.print(
-				"niveau " + statistics.get(StatNames.LVL) 
+				" niveau " + statistics.get(StatNames.LVL) 
 				+ " je possède " + statistics.get(StatNames.HP)+ " de vitalité, "
 				+ statistics.get(StatNames.STR) + " de force, "
 				+ statistics.get(StatNames.AGI) + " d'agilité et "

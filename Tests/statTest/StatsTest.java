@@ -61,7 +61,7 @@ class StatsTest {
 	@Test
 	void displayStatOfACharacterCorrectly() {
 		stats.display();
-		assertEquals("niveau 20 je possède 100 de vitalité, "
+		assertEquals(" niveau 20 je possède 100 de vitalité, "
 				+ "20 de force, "
 				+ "0 d'agilité et "
 				+ "0 d'intelligence !" 

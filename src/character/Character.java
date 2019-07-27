@@ -11,13 +11,11 @@ package character;
 
 public interface Character {
 	
-//	public int getPV();
-//	
-//	public void setPV(int newValue);
+	public String getName();
 	
 	public int getStat(String stat);
 	
-	public void setStat (String stat, int newValue);
+	public void update (String stat, int newValue);
 	
 	public void getDescription();
 	
