@@ -1,5 +1,7 @@
 package stat;
 
+import exceptions.StatValueIsInvalid;
+
 /**
  * 
  * @author Numawn
@@ -7,26 +9,34 @@ package stat;
  * This class represent a statistic of a character (att, def, int, ...).
  * A stat has a name and a value.
  * This class has for responsibility
- * to get and set the value of the stat.
+ * to create a stat and get its attributes.
  *
  */
 
 public class Stat {
 	
-	private String name;
+	private final String name;
 	private int value;
 	
-	public Stat(String name, int value) {
+	public Stat(String name , int value) {
 		this.name = name;
 		this.value = value;
+		
+		this.verifyValue();
+	}
+	
+	private void verifyValue() {
+		if(value < 0 || value > 100) {
+			throw new StatValueIsInvalid("Une stat doit avoir entre 0 et 100 points !");
+		}
 	}
 	
 	public int getValue() {
-		return -1;
+		return this.value;
 	}
 	
-	public void setValue(int newValue) {
-		
+	public String getName() {
+		return this.name;
 	}
 	
 }
