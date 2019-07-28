@@ -23,6 +23,7 @@ public class Stat {
 		this.value = value;
 		
 		this.verifyValue();
+		
 	}
 	
 	private void verifyValue() {

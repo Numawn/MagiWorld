@@ -8,7 +8,7 @@ public abstract class Player implements Character {
 	private final String name; //(Joueur 1 / Joueur 2)
 	private Stats stats;
 	
-	public Player(String name, Stats statistics) {
+	protected Player(String name, Stats statistics) {
 		this.name = name;
 		this.stats = statistics;
 	}

@@ -38,7 +38,7 @@ public class Rover extends Player {
 		System.out.print(this.getName() + " utilise Concentration et gagne "
 				+ halfLevel + " en agilité.\n");
 		
-		target.update(StatNames.AGI, halfLevel);
+		this.update(StatNames.AGI, halfLevel);
 	}
 
 }

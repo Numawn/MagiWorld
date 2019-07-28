@@ -36,7 +36,7 @@ public class Mage extends Player {
 		System.out.print(this.getName() + " utilise Soin et gagne " 
 				+ intel * 2 + " en vitalité.\n");
 		
-		target.update(StatNames.HP, intel * 2);
+		this.update(StatNames.HP, intel * 2);
 	}
 
 }
