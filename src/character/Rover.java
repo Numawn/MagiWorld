@@ -12,6 +12,9 @@ public class Rover extends Player {
 	}
 	
 
+	/**
+	 * Gets the description of the character
+	 */
 	@Override
 	public void getDescription() {
 		System.out.print("Shhhh je suis le vagabond ");
@@ -19,6 +22,9 @@ public class Rover extends Player {
 		
 	}
 
+	/**
+	 * The player attacks its opponent (decrease their HP)
+	 */
 	@Override
 	public void basicAttack(Character target) {
 		int agi = this.getStat(StatNames.AGI);
@@ -31,6 +37,10 @@ public class Rover extends Player {
 		
 	}
 
+	/**
+	 * The player uses its special attack (Concentration)
+	 * His AGI rises by half his Level
+	 */
 	@Override
 	public void specialAttack(Character target) {
 		int halfLevel = this.getStat(StatNames.LVL) / 2;

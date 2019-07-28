@@ -10,12 +10,18 @@ public class Warrior extends Player {
 	}
 	
 
+	/**
+	 * Gets the description of the character
+	 */
 	@Override
 	public void getDescription() {
 		System.out.print("Woarg je suis le guerrier ");
 		super.getDescription();
 	}
 
+	/**
+	 * The player attacks its opponent (decrease their HP)
+	 */
 	@Override
 	public void basicAttack(Character target) {
 		int strenght = this.getStat(StatNames.STR);
@@ -27,6 +33,10 @@ public class Warrior extends Player {
 		target.update(StatNames.HP, - strenght);
 	}
 
+	/**
+	 * The player uses a special attack (Rage hit)
+	 * He half its STR of HP and the opponent loses twice the STR of HP
+	 */
 	@Override
 	public void specialAttack(Character target) {
 		int strenght = this.getStat(StatNames.STR);

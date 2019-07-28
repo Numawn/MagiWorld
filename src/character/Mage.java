@@ -11,12 +11,18 @@ public class Mage extends Player {
 	}
 	
 
+	/**
+	 * Gets the description of the character
+	 */
 	@Override
 	public void getDescription() {
 		System.out.print("Abracadabra je suis le mage ");
 		super.getDescription();
 	}
 
+	/**
+	 * The player attacks its opponent (decrease their HP)
+	 */
 	@Override
 	public void basicAttack(Character target) {
 		int intel = this.getStat(StatNames.INT);
@@ -29,6 +35,10 @@ public class Mage extends Player {
 		
 	}
 
+	/**
+	 * The player uses its special attack (first aid)
+	 * his HP rises by twice its INT
+	 */
 	@Override
 	public void specialAttack(Character target) {
 		int intel = this.getStat(StatNames.INT);

@@ -16,6 +16,14 @@ import character.Character;
 import character.Mage;
 import character.Rover;
 
+/**
+ * 
+ * @author Numawn
+ * 
+ * Main class of MagiWorld game
+ *
+ */
+
 public class Main {
 	
 	private static final List<String> classes = new ArrayList<String>();
@@ -59,7 +67,7 @@ public class Main {
 	 * @param playerNumber 
 	 * @return the new player
 	 */
-	public static Character createPlayer(int playerNumber) {
+	private static Character createPlayer(int playerNumber) {
 		int type = chooseType(playerNumber);
 		boolean errCatched;
 		Stats stats = null;
@@ -86,7 +94,7 @@ public class Main {
 	 * @param playerNumber 
 	 * @return the type (class) of the character (an int)
 	 */
-	public static int chooseType(int playerNumber) {
+	private static int chooseType(int playerNumber) {
 		int type = 0;
 		System.out.println("Création du Joueur " + playerNumber);
 		
@@ -111,7 +119,7 @@ public class Main {
 	 * Creates the stats
 	 * @return return the stats in a tab
 	 */
-	public static Stat[] collectStats() {
+	private static Stat[] collectStats() {
 		int curVal;
 		
 		for(int nbQ = 0; nbQ < questions.length; nbQ++) {
@@ -139,7 +147,7 @@ public class Main {
 	 * @param stats stats of the new player
 	 * @return the new player
 	 */
-	public static Character selectType(int type, String name, Stats stats) {
+	private static Character selectType(int type, String name, Stats stats) {
 		switch(type){    
         case 1:    
             return new Warrior(name, stats);
@@ -155,7 +163,7 @@ public class Main {
 	/**
 	 * Starts a fight and return the result of the battle (who lose)
 	 */
-	public static String startFight(Character player1, Character player2) {
+	private static String startFight(Character player1, Character player2) {
 		
 		while(player1.getStat(StatNames.HP) != 0 && player2.getStat(StatNames.HP) != 0) {
 			playerAttacks(player1, chooseAction(player1), player2);
@@ -171,7 +179,7 @@ public class Main {
 	 * @param player
 	 * @return the type of attack (int) 
 	 */
-	public static int chooseAction(Character player) {
+	private static int chooseAction(Character player) {
 		int curentAttack;
 		do {
 			System.out.println(player.getName() + " " + "(" + player.getStat(StatNames.HP) + ")"
@@ -189,7 +197,7 @@ public class Main {
 	 * @param attackNumber
 	 * @param opponent
 	 */
-	public static void playerAttacks(Character player, int attackNumber, Character opponent) {
+	private static void playerAttacks(Character player, int attackNumber, Character opponent) {
 		if(attackNumber == 1) {
 			player.basicAttack(opponent);
 		}else if(attackNumber == 2) {
@@ -203,7 +211,7 @@ public class Main {
 	 * @param player2
 	 * @return A string that says who loses.
 	 */
-	public static String getResult(Character player1, Character player2) {
+	private static String getResult(Character player1, Character player2) {
 		if(player1.getStat(StatNames.HP) == 0) {
 			return player1.getName() + " est mort.";
 		}else {

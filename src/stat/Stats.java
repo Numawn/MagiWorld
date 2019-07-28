@@ -38,6 +38,10 @@ public class Stats {
 		
 	}
 	
+	/**
+	 * Verify the stat points are equals to the level
+	 * @param statPoints addition of the stat points
+	 */
 	private void verifyStatPoints(int statPoints) {
 		int level = statistics.get(StatNames.LVL);
 	
@@ -50,10 +54,20 @@ public class Stats {
 
 	}
 
+	/**
+	 * Get the value of the asked stat
+	 * @param name name of the stat we want
+	 * @return value of the asked stat
+	 */
 	public int getStat(String name) {
 		return this.statistics.get(name);
 	}
 	
+	/**
+	 * update the asked stat by adding the affectedVal
+	 * @param name name of the stat we're affecting
+	 * @param affectedVal value to add to the stat's current value
+	 */
 	public void update(String name, int affectedVal) {
 		int curVal = statistics.get(name);
 		
@@ -69,7 +83,9 @@ public class Stats {
 
 	}
 	
-	
+	/**
+	 * display all stats
+	 */
 	public void display() {
 		System.out.print(
 				" niveau " + statistics.get(StatNames.LVL) 
