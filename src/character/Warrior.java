@@ -34,7 +34,7 @@ public class Warrior extends Player {
 	}
 
 	/**
-	 * The player uses a special attack (Rage hit)
+	 * The player uses a special attack (Rage)
 	 * He half its STR of HP and the opponent loses twice the STR of HP
 	 */
 	@Override

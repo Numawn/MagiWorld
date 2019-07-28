@@ -13,7 +13,7 @@ public class StatNames {
 	
 	public static final String LVL = "Level";
 	public static final String HP  = "HealthPoints";
-	public static final String STR = "Strenght";
+	public static final String STR = "Strength";
 	public static final String INT = "Intelligence";
 	public static final String AGI = "Agility";
 }

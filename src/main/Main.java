@@ -38,11 +38,11 @@ public class Main {
 	private static final String[] statNames = {StatNames.LVL, StatNames.STR, StatNames.AGI, StatNames.INT};
 	
 	private static final Stat level = null;
-	private static final Stat strenght = null;
+	private static final Stat strength = null;
 	private static final Stat agi = null;
 	private static final Stat intel = null;
 	
-	private static final Stat[] stats = {level, strenght, agi, intel};
+	private static final Stat[] stats = {level, strength, agi, intel};
 	
 	
 	public static void main(String[] args) {

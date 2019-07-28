@@ -36,7 +36,7 @@ public class Mage extends Player {
 	}
 
 	/**
-	 * The player uses its special attack (first aid)
+	 * The player uses its special attack (heal)
 	 * his HP rises by twice its INT
 	 */
 	@Override
