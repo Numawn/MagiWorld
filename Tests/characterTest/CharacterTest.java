@@ -24,7 +24,7 @@ class CharacterTest {
 		private final static PrintStream originalOut = System.out;
 	
 	private Player warrior = new Warrior(
-			"Gérald", 
+			"GÃ©rald", 
 			new Stats(
 				new Stat(StatNames.LVL, 10),
 				new Stat(StatNames.STR, 10), 
@@ -100,10 +100,10 @@ class CharacterTest {
 	void GetTheDescriptionOfWarrior() {
 		warrior.getDescription();
 		assertEquals(
-				"Woarg je suis le guerrier Gérald "
-				+ "niveau 10 je possède 50 de vitalité, "
+				"Woarg je suis le guerrier GÃ©rald "
+				+ "niveau 10 je possÃ¨de 50 de vitalitÃ©, "
 				+ "10 de force, "
-				+ "0 d'agilité et "
+				+ "0 d'agilitÃ© et "
 				+ "0 d'intelligence !" 
 				+ "\n", outContent.toString());
 	}
@@ -113,9 +113,9 @@ class CharacterTest {
 		mage.getDescription();
 		assertEquals(
 				"Abracadabra je suis le mage Arnold "
-				+ "niveau 10 je possède 50 de vitalité, "
+				+ "niveau 10 je possÃ¨de 50 de vitalitÃ©, "
 				+ "0 de force, "
-				+ "0 d'agilité et "
+				+ "0 d'agilitÃ© et "
 				+ "10 d'intelligence !" 
 				+ "\n", outContent.toString());
 	}
@@ -125,9 +125,9 @@ class CharacterTest {
 		rover.getDescription();
 		assertEquals(
 				"Shhhh je suis le vagabond Archibald "
-				+ "niveau 10 je possède 50 de vitalité, "
+				+ "niveau 10 je possÃ¨de 50 de vitalitÃ©, "
 				+ "0 de force, "
-				+ "10 d'agilité et "
+				+ "10 d'agilitÃ© et "
 				+ "0 d'intelligence !" 
 				+ "\n", outContent.toString());
 	}
@@ -137,7 +137,7 @@ class CharacterTest {
 	void WarriorAffectsOpponentWithBasicAttack() {
 		warrior.basicAttack(mage);
 		
-		assertEquals("Gérald utilise Coup d'épée et inflige 10 dommages.\n"
+		assertEquals("GÃ©rald utilise Coup d'Ã©pÃ©e et inflige 10 dommages.\n"
 				+ "Arnold perd 10 points de vie.\n",
 				outContent.toString());
 		
@@ -159,8 +159,8 @@ class CharacterTest {
 	void RoverAffectsOpponentWithBasicAttack() {
 		rover.basicAttack(warrior);
 		
-		assertEquals("Archibald utilise Tir à l'Arc et inflige 10 dommages.\n"
-				+ "Gérald perd 10 points de vie.\n",
+		assertEquals("Archibald utilise Tir Ã  l'Arc et inflige 10 dommages.\n"
+				+ "GÃ©rald perd 10 points de vie.\n",
 				outContent.toString());
 		
 		assertEquals(40, warrior.getStat(StatNames.HP));
@@ -170,9 +170,9 @@ class CharacterTest {
 	void WarriorAffectsOpponentAndHimselfWithSpecialAttack() {
 		warrior.specialAttack(mage);
 		
-		assertEquals("Gérald utilise Coup de Rage et inflige 20 dommages.\n"
+		assertEquals("GÃ©rald utilise Coup de Rage et inflige 20 dommages.\n"
 				+ "Arnold perd 20 points de vie.\n"
-				+ "Gérald perd 5 points de vie.\n", 
+				+ "GÃ©rald perd 5 points de vie.\n", 
 				outContent.toString());
 		
 		assertEquals(45, warrior.getStat(StatNames.HP));
@@ -184,7 +184,7 @@ class CharacterTest {
 		mage.update(StatNames.HP, -30);
 		mage.specialAttack(mage);
 		
-		assertEquals("Arnold utilise Soin et gagne 20 en vitalité.\n", 
+		assertEquals("Arnold utilise Soin et gagne 20 en vitalitÃ©.\n", 
 				outContent.toString());
 		
 		assertEquals(40, mage.getStat(StatNames.HP));
@@ -194,7 +194,7 @@ class CharacterTest {
 	void RoverAffectsHimselfWithSpecialAttack() {
 		rover.specialAttack(rover);
 		
-		assertEquals("Archibald utilise Concentration et gagne 5 en agilité.\n",
+		assertEquals("Archibald utilise Concentration et gagne 5 en agilitÃ©.\n",
 				outContent.toString());
 		
 		assertEquals(15, rover.getStat(StatNames.AGI));
@@ -206,8 +206,8 @@ class CharacterTest {
 		mage.basicAttack(warrior);
 		
 		assertEquals("Arnold utilise Boule de Feu et inflige 10 dommages.\n"
-				+ "Gérald perd 10 points de vie.\n"
-				+ "Gérald est mort.\n", 
+				+ "GÃ©rald perd 10 points de vie.\n"
+				+ "GÃ©rald est mort.\n", 
 		outContent.toString());
 	}
 

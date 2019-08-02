@@ -30,7 +30,7 @@ public class Rover extends Player {
 		int agi = this.getStat(StatNames.AGI);
 		
 		System.out.print(this.getName() 
-				+ " utilise Tir à l'Arc et inflige " + agi + " dommages.\n"
+				+ " utilise Tir Ã  l'Arc et inflige " + agi + " dommages.\n"
 				+ target.getName()  + " perd " + agi + " points de vie.\n");
 		
 		target.update(StatNames.HP, - agi);
@@ -46,7 +46,7 @@ public class Rover extends Player {
 		int halfLevel = this.getStat(StatNames.LVL) / 2;
 		
 		System.out.print(this.getName() + " utilise Concentration et gagne "
-				+ halfLevel + " en agilité.\n");
+				+ halfLevel + " en agilitÃ©.\n");
 		
 		this.update(StatNames.AGI, halfLevel);
 	}

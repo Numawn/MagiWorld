@@ -27,7 +27,7 @@ public class Warrior extends Player {
 		int strenght = this.getStat(StatNames.STR);
 		
 		System.out.print(this.getName() 
-				+ " utilise Coup d'épée et inflige " + strenght + " dommages.\n"
+				+ " utilise Coup d'Ã©pÃ©e et inflige " + strenght + " dommages.\n"
 				+ target.getName()  + " perd " + strenght + " points de vie.\n");
 		
 		target.update(StatNames.HP, - strenght);

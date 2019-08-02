@@ -46,10 +46,10 @@ public class Stats {
 		int level = statistics.get(StatNames.LVL);
 	
 		if(level < 1 || level > 100) {
-			throw new LevelValueIsInvalid("Le niveau doit être compris entre 1 et 100 !");
+			throw new LevelValueIsInvalid("Le niveau doit Ãªtre compris entre 1 et 100 !");
 			
 		}else if(statPoints != level) {
-			throw new StatisticPointsAreInvalid("Les points de stat doivent être égaux au niveau !");
+			throw new StatisticPointsAreInvalid("Les points de stat doivent Ãªtre Ãªgaux au niveau !");
 		}
 
 	}
@@ -89,9 +89,9 @@ public class Stats {
 	public void display() {
 		System.out.print(
 				" niveau " + statistics.get(StatNames.LVL) 
-				+ " je possède " + statistics.get(StatNames.HP)+ " de vitalité, "
+				+ " je possÃ¨de " + statistics.get(StatNames.HP)+ " de vitalitÃ©, "
 				+ statistics.get(StatNames.STR) + " de force, "
-				+ statistics.get(StatNames.AGI) + " d'agilité et "
+				+ statistics.get(StatNames.AGI) + " d'agilitÃ© et "
 				+ statistics.get(StatNames.INT) + " d'intelligence !"
 				 + "\n");
 	}

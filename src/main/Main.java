@@ -32,7 +32,7 @@ public class Main {
 	
 	private static final String[] questions = {"Niveau du personnage ?",
 			"Force du personnage ?",
-			"Agilité du personnage ?",
+			"AgilitÃ© du personnage ?",
 			"Intelligence du personnage ?"};
 	
 	private static final String[] statNames = {StatNames.LVL, StatNames.STR, StatNames.AGI, StatNames.INT};
@@ -47,12 +47,11 @@ public class Main {
 	
 	public static void main(String[] args) {
 		classes.add("Guerrier");
-		classes.add("Rôdeur");
+		classes.add("RÃ´deur");
 		classes.add("Mage");
 	
 		Character player1 = createPlayer(1);
 		player1.getDescription();
-		
 		Character player2 = createPlayer(2);
 		player2.getDescription();
 		
@@ -76,10 +75,10 @@ public class Main {
 				 stats = new Stats(collectStats());
 				errCatched = false;
 			}catch(LevelValueIsInvalid e) {
-				System.out.println("Le niveau doit être situé entre 1 et 100.");
+				System.out.println("Le niveau doit Ãªtre situÃ© entre 1 et 100.");
 				errCatched = true;
 			}catch(StatisticPointsAreInvalid e) {
-				System.out.println("La somme des statistiques doit être égale au niveau.");
+				System.out.println("La somme des statistiques doit Ãªtre Ã©gale au niveau.");
 				errCatched = true;
 			}
 		}while(errCatched);
@@ -96,7 +95,7 @@ public class Main {
 	 */
 	private static int chooseType(int playerNumber) {
 		int type = 0;
-		System.out.println("Création du Joueur " + playerNumber);
+		System.out.println("CrÃ©ation du Joueur " + playerNumber);
 		
 		do {
 			System.out.print("Veuillez choisir la classe de votre personnage (");
@@ -184,7 +183,7 @@ public class Main {
 		do {
 			System.out.println(player.getName() + " " + "(" + player.getStat(StatNames.HP) + ")"
 					+ " Veuillez choisir votre action "
-					+ "(1 : Attaque Basique, 2 : Attaque Spéciale)");
+					+ "(1 : Attaque Basique, 2 : Attaque SpÃ©ciale)");
 			curentAttack = scanner.nextInt();
 		}while(curentAttack != 1 && curentAttack != 2);	
 		

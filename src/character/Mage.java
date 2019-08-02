@@ -44,7 +44,7 @@ public class Mage extends Player {
 		int intel = this.getStat(StatNames.INT);
 		
 		System.out.print(this.getName() + " utilise Soin et gagne " 
-				+ intel * 2 + " en vitalité.\n");
+				+ intel * 2 + " en vitalitÃ©.\n");
 		
 		this.update(StatNames.HP, intel * 2);
 	}
