@@ -46,9 +46,11 @@ public class Warrior extends Player {
 				+ target.getName() + " perd " + strenght * 2 + " points de vie.\n");
 		
 		target.update(StatNames.HP, - strenght * 2);
-		this.update(StatNames.HP, - strenght / 2);
 		
 		System.out.print(this.getName() + " perd " + strenght / 2 + " points de vie.\n");
+		this.update(StatNames.HP, - strenght / 2);
+		
+		
 		
 	}
 	
