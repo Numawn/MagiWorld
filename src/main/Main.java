@@ -1,22 +1,20 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.List;
+import character.Character;
+import character.Mage;
+import character.Rover;
 import character.Warrior;
 import exceptions.LevelValueIsInvalid;
 import exceptions.StatValueIsInvalid;
 import exceptions.StatisticPointsAreInvalid;
-import fight.Fight;
+import game.Fight;
 import stat.Stat;
 import stat.StatNames;
 import stat.Stats;
+import tools.Tools;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
-
-import character.Character;
-import character.Mage;
-import character.Rover;
 
 /**
  * 
@@ -27,9 +25,11 @@ import character.Rover;
  */
 
 public class Main {
-	
-	private static final List<String> classes = new ArrayList<String>();
-	private static final Scanner scanner = new Scanner(System.in);
+
+	public static final List<String> classes = new ArrayList<String>();
+	public static final String[] statNames = {StatNames.LVL, StatNames.STR, StatNames.AGI, StatNames.INT};
+	private static final Stat[] stats = {null, null, null, null};
+	private static String classesChoice;
 	
 	private static final String[] questions = {
 			"Niveau du personnage ?",
@@ -37,27 +37,19 @@ public class Main {
 			"Agilité du personnage ?",
 			"Intelligence du personnage ?"};
 	
-	private static final String[] statNames = {StatNames.LVL, StatNames.STR, StatNames.AGI, StatNames.INT};
-	private static final Stat[] stats = {null, null, null, null};
-	private static String classesChoice;
-	
 	
 	public static void main(String[] args) {
 		classes.add("Guerrier");
 		classes.add("Rôdeur");
 		classes.add("Mage");
-		
 		classesChoice = classesToString();
-		
+
 		Character player1 = createPlayer(1);
-		player1.getDescription();
 		Character player2 = createPlayer(2);
-		player2.getDescription();
 		
-		Fight fight = new Fight(scanner);
+		Fight fight = new Fight();
 		fight.start(player1, player2);
 		
-		scanner.close();
 		
 	}
 	
@@ -79,12 +71,13 @@ public class Main {
 		return classesChoice;
 	}
 	
+
 	/**
 	 * Allows to create a player
 	 * @param playerNumber 
 	 * @return the new player
 	 */
-	private static Character createPlayer(int playerNumber) {
+	public static Character createPlayer(int playerNumber) {
 		int type = chooseType(playerNumber);
 		boolean errCatched = true;
 		Stats stats = null;
@@ -113,13 +106,12 @@ public class Main {
 		int type = 0;
 		System.out.println("Création du Joueur " + playerNumber);
 		do {
-			type = askValue(classesChoice);
+			type = Tools.askValue(classesChoice);
 		}while(type < 1 || type > classes.size());
 		
 		return type;
 		
 	}
-	
 	
 	
 	/**
@@ -131,7 +123,7 @@ public class Main {
 		
 		for(int nbQ = 0; nbQ < questions.length; nbQ++) {
 			do {
-				curVal = askValue(questions[nbQ]);
+				curVal = Tools.askValue(questions[nbQ]);
 				try { 
 					stats[nbQ] = new Stat(statNames[nbQ], curVal);
 				}catch(StatValueIsInvalid e) {
@@ -168,28 +160,4 @@ public class Main {
 	}
 	
 	
-	/**
-	 * Asks the player to enter a value 
-	 * @param question question that is asked to the player 
-	 * @return the choice the player made
-	 */
-	private static int askValue(String question) {
-		int curVal = -1;
-		boolean catched;
-		System.out.println(question);
-		do {
-			try {
-				catched = false;
-				curVal = scanner.nextInt();
-			}catch(InputMismatchException e) {
-				scanner.next();
-				System.err.print("Veuillez entrer un nombre.\n");
-				System.out.println(question);
-				catched = true;
-			}
-		}while(catched);
-		
-		return curVal;
-	}
-
 }

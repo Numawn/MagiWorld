@@ -1,18 +1,12 @@
-package fight;
-
-import java.util.InputMismatchException;
-import java.util.Scanner;
+package game;
 
 import character.Character;
 import stat.StatNames;
+import tools.Tools;
 
 public class Fight {
+
 	
-	private static Scanner scanner;
-	
-	public Fight(Scanner sc) {
-		scanner = sc;
-	}
 	
 	/**
 	 * Starts a fight and return the result of the battle (who lose)
@@ -49,7 +43,7 @@ public class Fight {
 				+ "Veuillez choisir votre action "
 				+ "(1 : Attaque Basique, 2 : Attaque Spéciale)";
 		do {
-			curentAttack = askValue(question);
+			curentAttack = Tools.askValue(question);
 		}while(curentAttack != 1 && curentAttack != 2);	
 		
 		return curentAttack;
@@ -82,29 +76,6 @@ public class Fight {
 			return player2.getName() + " est mort.";
 		}
 	}
-	
-	/**
-	 * Asks the player to enter a value 
-	 * @param question question that is asked to the player 
-	 * @return the choice the player made
-	 */
-	private static int askValue(String question) {
-		int curVal = -1;
-		boolean catched;
-		System.out.println(question);
-		do {
-			try {
-				catched = false;
-				curVal = scanner.nextInt();
-			}catch(InputMismatchException e) {
-				scanner.next();
-				System.err.print("Veuillez entrer un nombre.\n");
-				System.out.println(question);
-				catched = true;
-			}
-		}while(catched);
-		
-		return curVal;
-	}
+
 
 }
